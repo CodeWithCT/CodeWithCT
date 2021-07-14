@@ -1625,3 +1625,7 @@ a {
 .cid-sATvb7IqUY .media-container-row .row-copirayt p {
   width: 100%;
 }
+
+@media screen and (max-width:500px) {
+  #browse_btn { display:none; }
+}
