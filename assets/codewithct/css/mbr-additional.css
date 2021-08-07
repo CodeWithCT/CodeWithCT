@@ -2656,3 +2656,10 @@ a {
   font-size: 15px;
   color: gray;
 }
+
+@media screen and (max-width:500px) {
+  #browse_btn { display:none; }
+}
+@media screen and (max-width:600px) {
+  .mobile_padding { padding-left: 20px; padding-right: 20px;}
+}
