@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @CodeWithCT (Chandresh Tiwari)
 - 👀 I’m interested in web and wordpress development.
-- 🌱 I’m currently learning web app development with react js.
+- 🌱 I’m currently Working as Fulll Time Website Developer at Jagran Lakecity University.
 - 📫 you can reach me by browsing http://codewithct.com if you want.
 
 <!---
