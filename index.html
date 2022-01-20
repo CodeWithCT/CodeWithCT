@@ -45,7 +45,35 @@
     <link rel="stylesheet" href="assets/codewithct/css/mbr-additional.css" type="text/css">
 
 
+<style>
+    * {
 
+  cursor: none;
+}
+html {
+  height: 100%;
+}
+
+.custom-cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 350ms ease;
+  transform: translate(-50%, -50%) scale(.3);
+  z-index: 1000;
+}
+.custom-cursor--link {
+  transform: translate(-50%, -50%) scale(1);
+}
+.custom-cursor--h2s{
+  transform: translate(-50%, -50%) scale(2);
+}
+</style>
 
 </head>
 
@@ -867,6 +895,63 @@
 
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i
                 class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <div class="custom-cursor"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a");
+  var hns = document.querySelectorAll("h2");
+  var initCursor = false;
+
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
+
+    selfLink.addEventListener("mouseover", function() {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function() {
+      cursor.classList.remove("custom-cursor--link");
+    });
+  }
+        for (var k = 0; k < hns.length; k++) {
+    var selfh = hns[k];
+
+    selfh.addEventListener("mouseover", function() {
+      cursor.classList.add("custom-cursor--h2s");
+    });
+    selfh.addEventListener("mouseout", function() {
+      cursor.classList.remove("custom-cursor--h2s");
+    });
+  }
+
+  window.onmousemove = function(e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1
+      });
+      initCursor = true;
+    }
+
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
+
+  window.onmouseout = function(e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0
+    });
+    initCursor = false;
+  };
+});
+
+</script>
 </body>
 
 </html>
