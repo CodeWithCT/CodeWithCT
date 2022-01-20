@@ -901,7 +901,8 @@ html {
     document.addEventListener("DOMContentLoaded", function(event) {
   var cursor = document.querySelector(".custom-cursor");
   var links = document.querySelectorAll("a");
-  var hns = document.querySelectorAll("h2");
+  var hns = document.querySelectorAll("h1");
+        
   var initCursor = false;
 
   for (var i = 0; i < links.length; i++) {
@@ -918,10 +919,10 @@ html {
     var selfh = hns[k];
 
     selfh.addEventListener("mouseover", function() {
-      cursor.classList.add("custom-cursor--h2s");
+      cursor.classList.add("custom-cursor--h1s");
     });
     selfh.addEventListener("mouseout", function() {
-      cursor.classList.remove("custom-cursor--h2s");
+      cursor.classList.remove("custom-cursor--h1s");
     });
   }
 
