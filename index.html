@@ -125,7 +125,7 @@ var results = document.getElementById('results');
 
 document.querySelector('input').addEventListener('keyup', function() {
   params.innerText = this.value;
-  results.innerText = JSON.stringify(getAllUrlParams("http://test.com/?" + this.value), null, 2);
+  results.innerText = JSON.stringify(getAllUrlParams("http://codewithct.com/?" + this.value), null, 2);
 });
 
 </script>
@@ -148,7 +148,9 @@ document.querySelector('input').addEventListener('keyup', function() {
     </script>
     <!-- /Analytics -->
 
-
+<p>URL: http://test.com/?<span id="params"></span></p>
+<p><input placeholder="Enter URL params" /></p>
+<pre id="results">{}</pre>
 
     <section class="menu menu1 cid-sAToTck0s3" once="menu" id="menu1-1g">
 
