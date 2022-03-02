@@ -923,7 +923,16 @@ console.log(c);
       cursor.classList.remove("custom-cursor--link");
     });
   }
-  
+  for (var k = 0; k < hns.length; k++) {
+    var selfh = hns[k];
+
+            selfh.addEventListener("mouseover", function() {
+                cursor.classList.add("custom-cursor--h1s");
+    });
+            selfh.addEventListener("mouseout", function() {
+                cursor.classList.remove("custom-cursor--h1s");
+    });
+  }
 
   window.onmousemove = function(e) {
     var mouseX = e.clientX;
